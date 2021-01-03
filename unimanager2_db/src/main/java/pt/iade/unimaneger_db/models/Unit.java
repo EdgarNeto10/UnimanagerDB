@@ -27,10 +27,10 @@ public class Unit {
     private int dis_creditos;
 
     @OneToMany @JoinColumn(name="pla_dis_id") @JsonIgnoreProperties("unit")
-    private List<PlanoEstudo> plano_Estudos;
+    private List<PlanoEstudo> planoestudos;
     
     @JsonIgnore private int  dis_dep_id;
-    @ManyToOne @MapsId("dep_id") @JoinColumn(name = "dis_dep_id")  private Departamento departamento;
+    @ManyToOne @MapsId("dep_id") @JoinColumn(name = "dis_dep_id") @JsonIgnoreProperties("unidades") private Departamento departamento;
     
     public Unit() {}
 
@@ -49,8 +49,8 @@ public class Unit {
       return dis_creditos;
     }
 
-    public List<PlanoEstudo> getPlano_Estudos() {
-      return plano_Estudos;
+    public List<PlanoEstudo> getPlanoestudos() {
+      return planoestudos;
     }
 
     public Departamento getDepartamento() {

@@ -27,7 +27,7 @@ public class PlanoEstudo {
     @JsonIgnore private int cur_id;
     
     @ManyToOne @MapsId("cur_id") @JoinColumn(name="pla_cur_id")
-    @JsonIgnoreProperties("plano_Estudos") 
+    @JsonIgnoreProperties("planoestudos") 
     private Curso curso;
 
     
@@ -36,7 +36,7 @@ public class PlanoEstudo {
     @JsonIgnore private int dis_id;
     
     @ManyToOne @MapsId("dis_id") @JoinColumn(name="pla_dis_id")
-    @JsonIgnoreProperties("plano_Estudos") 
+    @JsonIgnoreProperties("planoestudos") 
     private Unit unidade;
 
     @Column(name= "pla_semestre") private int semestre;

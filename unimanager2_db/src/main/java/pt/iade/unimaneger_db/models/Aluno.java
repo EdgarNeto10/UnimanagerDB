@@ -34,9 +34,10 @@ public class Aluno {
     @JsonIgnore private int  alu_cur_id;
     @ManyToOne @MapsId("cur_id") @JoinColumn(name = "alu_cur_id")  private Curso curso;
 
+    /*
     @OneToMany @JoinColumn(name="ins_alu_id") @JsonIgnoreProperties("aluno")
     private List<Inscricao> inscricoes;
-
+    */
 
     public Aluno() {}
 
@@ -79,9 +80,10 @@ public class Aluno {
     }
 
  
-
+/*
     public List<Inscricao> getInscricoes() {
         return inscricoes;
     }
+  */  
  
 }

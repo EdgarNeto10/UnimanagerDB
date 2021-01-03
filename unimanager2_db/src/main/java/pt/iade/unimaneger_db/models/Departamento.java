@@ -24,8 +24,9 @@ public class Departamento {
         @Column(name= "dep_nome") private String nome; 
         @Column(name= "dep_sigla") private char sigla;
 
-        @OneToMany @JoinColumn(name="dis_dep_id") @JsonIgnoreProperties("departamento")
-        private List<Unit> unidades;
+        
+        @OneToMany @JoinColumn(name="dis_dep_id") @JsonIgnoreProperties("departamento") private List<Unit> unidades;
+    
 
         public Departamento(){}
         
@@ -41,11 +42,13 @@ public class Departamento {
             return sigla;
         }  
 
+    
+
         public List<Unit> getUnidades() {
             return unidades;
         }
 
-       
+    
 
         
     

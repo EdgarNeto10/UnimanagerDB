@@ -21,12 +21,12 @@ public class Curso {
     @Id  @GeneratedValue
          (strategy = GenerationType.IDENTITY)
 	
-		 @Column(name= "cur_id") private int id;
+	@Column(name= "cur_id") private int id;
 	@Column(name= "cur_nome") private String nome;
 	
 
 	@OneToMany @JoinColumn(name="pla_cur_id") @JsonIgnoreProperties("curso")
-    private List<PlanoEstudo> plano_Estudos;
+    private List<PlanoEstudo> planoestudos;
 	
 	@OneToMany @JoinColumn(name="alu_cur_id") @JsonIgnoreProperties("curso")
     private List<Aluno> alunos;
@@ -43,17 +43,13 @@ public class Curso {
 		return nome;
 	}
 
-	public List<PlanoEstudo> getPlano_Estudos() {
-		return plano_Estudos;
+	public List<PlanoEstudo> getPlanoestudos() {
+		return planoestudos;
 	}
 
-
-	public void setAlunos(List<Aluno> alunos) {
-		this.alunos = alunos;
+	public List<Aluno> getAlunos() {
+		return alunos;
 	}
-
-	
-
 
 
     
